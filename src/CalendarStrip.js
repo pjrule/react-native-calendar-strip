@@ -494,7 +494,8 @@ class CalendarStrip extends Component {
 
     if (!scrollable) {
       const weekStartDate = datesList[0].date;
-      const weekEndDate = datesList[this.state.numVisibleDays - 1].date;
+      const numVisible = this.state.numVisibleDays !== undefined ? this.state.numVisibleDays : numDays;
+      const weekEndDate = datesList[numVisible - 1].date;
       newState.weekStartDate = weekStartDate;
       newState.weekEndDate = weekEndDate;
 
